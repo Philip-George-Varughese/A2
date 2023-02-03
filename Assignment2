@@ -1,0 +1,43 @@
+Example file:
+a.txt
+
+Welcome to Python 
+Welcome to C
+Welcome to Java
+
+
+
+Read and Write ('r+’): This method opens the file for both reading and writing. 
+                       The start of the file is where the handle is located. 
+                       If the file does not exist, an I/O error gets raised.
+                       
+eg: with open('file.txt', 'r+') as filee:
+    filee.read()               
+    filee.write("new line \n")                       
+             
+             
+             
+Write and Read ('w+’): This mode opens the file for both reading and writing.
+                       The start of the file is where the handle is located.
+                       The text is overwritten and deleted from an existing file. 
+                       
+eg: with open('file.txt', 'w+') as filee:   
+    filee.write("testing 1\n")
+    filee.write("testing 2\n")
+    filee.write("testing 3\n")             
+    filee.seek(0)                       
+    reading=filee.read()                
+    print(reading)               
+                       
+                       
+                       
+Append and Read (‘a+’): Using this method, you can read and write in the file. 
+                        If the file doesn't already exist, one gets created. 
+                        The handle is set at the end of the file. 
+                        The newly written text will be added at the end, following the previously written data.
+                        
+eg: with open('file.txt', 'a+') as filee:
+    filee.seek(0)                       
+    lines = filee.readlines()           
+    filee.write("\n" + str(len(lines)))
+    filee.write("\nDone!")
